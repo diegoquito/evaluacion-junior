@@ -1,0 +1,17 @@
+@if (cargando()) {
+  <p>Verificando la conexión con la API…</p>
+}
+
+@if (salud(); as s) {
+  <h1>Cartera: ambiente listo</h1>
+  <p>La API responde y la base de datos tiene {{ s.clientes }} clientes cargados.</p>
+}
+
+@if (error()) {
+  <h1>La API no responde</h1>
+  <p>No se pudo conectar con {{ apiUrl }}/salud. Revisa que:</p>
+  <ul>
+    <li>La API esté en ejecución (<code>dotnet run --project src/Cartera.Api</code>).</li>
+    <li>La base de datos haya terminado de cargar (<code>docker compose logs db-init</code>).</li>
+  </ul>
+}

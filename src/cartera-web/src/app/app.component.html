@@ -1,0 +1,11 @@
+<header class="barra">
+  <strong>Cartera</strong>
+  <nav>
+    <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+    <a routerLink="/contratos" routerLinkActive="activo">Contratos</a>
+  </nav>
+</header>
+
+<main class="contenido">
+  <router-outlet />
+</main>
